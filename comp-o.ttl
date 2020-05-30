@@ -1,12 +1,12 @@
-@prefix : <https://gregoryalary.github.io/composable-owl-s#> .
+@prefix : <https://gregoryalary.github.io/comp-o#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://gregoryalary.github.io/composable-owl-s> .
+@base <https://gregoryalary.github.io/comp-o> .
 
-<https://gregoryalary.github.io/composable-owl-s> rdf:type owl:Ontology ;
+<https://gregoryalary.github.io/comp-o> rdf:type owl:Ontology ;
                                                    owl:imports <http://www.daml.org/services/owl-s/1.2/Process.owl> ,
                                                                <http://www.daml.org/services/owl-s/1.2/Profile.owl> ,
                                                                <http://www.daml.org/services/owl-s/1.2/Service.owl> .
@@ -15,7 +15,6 @@
 #    Object Properties
 #################################################################
 
-###  https://gregoryalary.github.io/composable-owl-s#requiredPerformContract
 :requiredPerformContract rdf:type owl:ObjectProperty ,
                                   owl:FunctionalProperty ;
                          rdfs:domain :RequiredPerform ;
@@ -27,14 +26,12 @@
 #    Classes
 #################################################################
 
-###  https://gregoryalary.github.io/composable-owl-s#ComponentBasedService
 :ComponentBasedService rdf:type owl:Class ;
                        rdfs:subClassOf <http://www.daml.org/services/owl-s/1.2/Service.owl#Service> ;
                        rdfs:comment "A service that can have one or moreRequiredPerform (a required interface) in its process, and that is not operational until all its required perform are replaced with an actual perform referencing another process."@en ;
                        rdfs:label "Component-based service"@en .
 
 
-###  https://gregoryalary.github.io/composable-owl-s#RequiredPerform
 :RequiredPerform rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.daml.org/services/owl-s/1.2/Process.owl#Perform> ,
                                  [ rdf:type owl:Restriction ;
@@ -49,7 +46,6 @@
                  rdfs:label "Required perform"@en .
 
 
-###  https://gregoryalary.github.io/composable-owl-s#ServiceContract
 :ServiceContract rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile> ,
                                  [ rdf:type owl:Restriction ;
