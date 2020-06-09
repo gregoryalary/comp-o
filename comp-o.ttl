@@ -7,18 +7,20 @@
 @base <https://gregoryalary.github.io/comp-o> .
 
 <https://gregoryalary.github.io/comp-o> rdf:type owl:Ontology ;
-                                                   owl:imports <http://www.daml.org/services/owl-s/1.2/Process.owl> ,
-                                                               <http://www.daml.org/services/owl-s/1.2/Profile.owl> ,
-                                                               <http://www.daml.org/services/owl-s/1.2/Service.owl> .
+                                         owl:imports <http://www.daml.org/services/owl-s/1.2/Process.owl> ,
+                                                     <http://www.daml.org/services/owl-s/1.2/Profile.owl> ,
+                                                     <http://www.daml.org/services/owl-s/1.2/Service.owl> .
 
 #################################################################
 #    Object Properties
 #################################################################
 
+###  https://gregoryalary.github.io/comp-o#requiredPerformContract
 :requiredPerformContract rdf:type owl:ObjectProperty ,
                                   owl:FunctionalProperty ;
                          rdfs:domain :RequiredPerform ;
                          rdfs:range :ServiceContract ;
+                         rdfs:comment "Used to link a RequiredPerform with the ServiceContract it requires."@en ;
                          rdfs:label "Required perform contract" .
 
 
@@ -26,12 +28,14 @@
 #    Classes
 #################################################################
 
+###  https://gregoryalary.github.io/comp-o#ComponentBasedService
 :ComponentBasedService rdf:type owl:Class ;
                        rdfs:subClassOf <http://www.daml.org/services/owl-s/1.2/Service.owl#Service> ;
                        rdfs:comment "A service that can have one or moreRequiredPerform (a required interface) in its process, and that is not operational until all its required perform are replaced with an actual perform referencing another process."@en ;
                        rdfs:label "Component-based service"@en .
 
 
+###  https://gregoryalary.github.io/comp-o#RequiredPerform
 :RequiredPerform rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.daml.org/services/owl-s/1.2/Process.owl#Perform> ,
                                  [ rdf:type owl:Restriction ;
@@ -42,10 +46,11 @@
                                    owl:onProperty :requiredPerformContract ;
                                    owl:cardinality "1"^^xsd:nonNegativeInteger
                                  ] ;
-                 rdfs:comment "Models the required interface of a component-based service. Similar to a perform whose process reference has not been resolved yet. A required interface explaining what the perform must do is specified with the requiredInterface predicate."@en ;
+                 rdfs:comment "Models the required interface of a component-based service. Similar to a perform whose process reference has not been resolved yet. A required interface specifying what the perform must do is specified with the requiredInterface predicate."@en ;
                  rdfs:label "Required perform"@en .
 
 
+###  https://gregoryalary.github.io/comp-o#ServiceContract
 :ServiceContract rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile> ,
                                  [ rdf:type owl:Restriction ;

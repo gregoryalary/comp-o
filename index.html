@@ -16,8 +16,7 @@
             </div>
         </div>
     </section>
-    <h1>TODO</h1>
-    <!-- <br>
+    <br>
     <div class="columns">
         <div class="column"></div>
         <div class="column is-half" style="margin:15px;">
@@ -26,70 +25,109 @@
                 <h1 class="title is-3">Object properties</h1>
                 <div class="card" id="requiredInterface">
                     <header class="card-header">
-                        <p class="card-header-title">Required interface</p>
+                        <p class="card-header-title">Required perform contract</p>
                     </header>
                     <div class="card-content">
                         <div class="content">
-                            <p>Domain : <a href="https://gregoryalary.github.io/composable-owl-s#ComposablePerform">https://gregoryalary.github.io/composable-owl-s#ComposablePerform</a></p>
-                            <p>Range : <a href="https://gregoryalary.github.io/composable-owl-s#ServiceProfileInterface">https://gregoryalary.github.io/composable-owl-s#ServiceProfileInterface</a></p>
+                            <p>Used to link a <a
+                                    href="https://gregoryalary.github.io/comp-o#RequiredPerform">RequiredPerform</a>
+                                with the <a
+                                    href="https://gregoryalary.github.io/comp-o#ServiceContract">ServiceContract</a> it
+                                requires.</p>
+                            <p>Domain : <a
+                                    href="https://gregoryalary.github.io/comp-o#RequiredPerform">https://gregoryalary.github.io/comp-o#RequiredPerform</a>
+                            </p>
+                            <p>Range : <a
+                                    href="https://gregoryalary.github.io/comp-o#ServiceContract">https://gregoryalary.github.io/comp-o#ServiceContract</a>
+                            </p>
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item"><a href="https://gregoryalary.github.io/composable-owl-s#requiredInterface">https://gregoryalary.github.io/composable-owl-s#requiredInterface</a></p>
+                        <p class="card-footer-item"><a
+                                href="https://gregoryalary.github.io/comp-o#requiredPerformContract">https://gregoryalary.github.io/comp-o#requiredPerformContract</a>
+                        </p>
                     </footer>
                 </div>
                 <br>
             </div>
             <div class="container">
                 <h1 class="title is-2">Classes</h1>
-                <div class="card" id="ComposablePerform">
+                <div class="card" id="RequiredPerform">
                     <header class="card-header">
-                        <p class="card-header-title">Composable perform</p>
+                        <p class="card-header-title">Required perform</p>
                     </header>
                     <div class="card-content">
                         <div class="content">
-                            <p>A Perform whose process reference has not been resolved yet. A required interface explaining what the perform must do is specified with the requiredInterface predicate.</p>
-                            <p>Sub class of : <a href="http://www.daml.org/services/owl-s/1.2/Process.owl#Perform">http://www.daml.org/services/owl-s/1.2/Process.owl#Perform</a></p>
+                            <p>Models the required interface of a component-based service. Similar to a perform whose
+                                process reference has not been resolved yet. A required interface specifying what the
+                                perform must do is specified with the <a
+                                    href="https://gregoryalary.github.io/comp-o#requiredInterface">requiredInterface</a>
+                                predicate.</p>
+                            <p>Sub class of : <a
+                                    href="http://www.daml.org/services/owl-s/1.2/Process.owl#Perform">http://www.daml.org/services/owl-s/1.2/Process.owl#Perform</a>
+                            </p>
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item"><a href="https://gregoryalary.github.io/composable-owl-s#ComposablePerform">https://gregoryalary.github.io/composable-owl-s#ComposablePerform</a></p>
+                        <p class="card-footer-item"><a
+                                href="https://gregoryalary.github.io/comp-o#RequiredPerform">https://gregoryalary.github.io/comp-o#RequiredPerform</a>
+                        </p>
                     </footer>
                 </div>
                 <br>
-                <div class="card" id="ComposableService">
+                <div class="card" id="ServiceContract">
                     <header class="card-header">
-                        <p class="card-header-title">Composable service</p>
+                        <p class="card-header-title">Component-based service</p>
                     </header>
                     <div class="card-content">
                         <div class="content">
-                            <p>A service that needs to be composed to become usable/operational. (ie. A service whose some of its components are composable perform)</p>
-                            <p>Sub class of : <a href="http://www.daml.org/services/owl-s/1.2/Service.owl#Service">http://www.daml.org/services/owl-s/1.2/Service.owl#Service</a></p>
+                            <p>A Component-based service is a service that can have no or several <a
+                                    href="https://gregoryalary.github.io/comp-o#RequiredPerform">RequiredPerform</a> (a
+                                required interface) in its process, and that is not operational until all its required
+                                perform are replaced with an actual perform referencing another process.</p>
+                            <p>Sub class of : <a
+                                    href="http://www.daml.org/services/owl-s/1.2/Service.owl#Service">http://www.daml.org/services/owl-s/1.2/Service.owl#Service</a>
+                            </p>
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item"><a href="https://gregoryalary.github.io/composable-owl-s#ComposableService">https://gregoryalary.github.io/composable-owl-s#ComposableService</a></p>
+                        <p class="card-footer-item"><a
+                                href="https://gregoryalary.github.io/comp-o#ComponentBasedService">https://gregoryalary.github.io/comp-o#ComponentBasedService</a>
+                        </p>
                     </footer>
                 </div>
                 <br>
-                <div class="card" id="ServiceProfileInterface">
+                <div class="card" id="ServiceContract">
                     <header class="card-header">
-                        <p class="card-header-title">Service profile interface</p>
+                        <p class="card-header-title">Service contract</p>
                     </header>
                     <div class="card-content">
                         <div class="content">
-                            <p>A service profile that does not specify an implementation using the has_process predicate. It only describes a service contract.</p>
-                            <p>Sub class of : <a href="http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile">http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile</a></p>
+                            <p>A service profile that does not specify an implementation (a process) using the <a
+                                    href="http://www.daml.org/services/owl-s/1.2/Process.owl#has_process">has_process</a>
+                                predicate. It only describes a service contract.</p>
+                            <p>Sub class of : <a
+                                    href="http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile">http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile</a>
+                            </p>
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item"><a href="https://gregoryalary.github.io/composable-owl-s#ServiceProfileInterface">https://gregoryalary.github.io/composable-owl-s#ServiceProfileInterface</a></p>
+                        <p class="card-footer-item"><a
+                                href="https://gregoryalary.github.io/comp-o#ServiceContract">https://gregoryalary.github.io/comp-o#ServiceContract</a>
+                        </p>
                     </footer>
                 </div>
             </div>
         </div>
         <div class="column"></div>
-    </div> -->
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Comp-O</strong>. The source code of the ontology is published on <a href="https://github.com/gregoryalary/comp-o" target="_blank">GitHub</a>.
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>
