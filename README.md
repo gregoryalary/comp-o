@@ -1,4 +1,4 @@
-# comp-o
+# Comp-O
 
 Comp-O is a minimal OWL-S extension for describing component-based services.
 The ontology documentation is available at [https://gregoryalary.github.io/comp-o/](https://gregoryalary.github.io/comp-o/).
